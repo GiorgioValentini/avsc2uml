@@ -1,0 +1,147 @@
+{
+    "name": "ExampleEvent",
+    "namespace": "com.example",
+    "type": "record",
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "source",
+            "type": "string"
+        },
+        {
+            "name": "specversion",
+            "type": "string"
+        },
+        {
+            "name": "type",
+            "type": "string"
+        },
+        {
+            "name": "datacontenttype",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null
+        },
+        {
+            "name": "dataschema",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null
+        },
+        {
+            "name": "time",
+            "type": [
+                "null",
+                "long"
+            ],
+            "default": null
+        },
+        {
+            "name": "operation",
+            "type": [
+                "null",
+                {
+                    "name": "Operations",
+                    "type": "enum",
+                    "symbols": [
+                        "CREATE",
+                        "UPDATE",
+                        "DELETE"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "data",
+            "type": {
+                "name": "Event",
+                "type": "record",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "string"
+                    },
+                    {
+                        "name": "effectiveDate",
+                        "type": "string"
+                    },
+                    {
+                        "name": "tmstRegistration",
+                        "type": "string"
+                    },
+                    {
+                        "name": "objectId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "contract",
+                        "type": {
+                            "name": "Contract",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "id",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "correlationId",
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
+                                },
+                                {
+                                    "name": "correlationType",
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
+                                },
+                                {
+                                    "name": "companyCode",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "initiativeCode",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "contractNumber",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "archiveNumber",
+                                    "type": [
+                                        "null",
+                                        "long"
+                                    ]
+                                },
+                                {
+                                    "name": "variables",
+                                    "type": {
+                                        "type": "map",
+                                        "values": [
+                                            "double",
+                                            "null",
+                                            "boolean",
+                                            "string",
+                                            "int",
+                                            "long"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
