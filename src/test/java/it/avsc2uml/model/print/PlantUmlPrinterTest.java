@@ -11,7 +11,7 @@ public class PlantUmlPrinterTest {
 
 	@Test
 	void printEnumsTest() throws IOException {
-		Schema schema = new Schema.Parser().parse(new File("src/test/resources/example-schema.avsc"));
+		Schema schema = new Schema.Parser().parse(new File("src/test/resources/generic-schema.avsc"));
 
 		AvroRecord stringObjectMap = AvroRecord.of(schema);
 
@@ -20,7 +20,7 @@ public class PlantUmlPrinterTest {
 
 	@Test
 	void withoutEnumsTest() throws IOException {
-		Schema schema = new Schema.Parser().parse(new File("src/test/resources/example-schema.avsc"));
+		Schema schema = new Schema.Parser().parse(new File("src/test/resources/generic-schema.avsc"));
 
 		AvroRecord stringObjectMap = AvroRecord.of(schema);
 

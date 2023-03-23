@@ -13,7 +13,7 @@ public class AvroRecordTest {
 
 	@Test
 	void correctParsingTest() throws IOException {
-		Schema schema = new Schema.Parser().parse(new File("src/test/resources/example-schema.avsc"));
+		Schema schema = new Schema.Parser().parse(new File("src/test/resources/generic-schema.avsc"));
 
 		AvroRecord stringObjectMap = AvroRecord.of(schema);
 
